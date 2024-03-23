@@ -38,6 +38,9 @@ public class Product {
     @Column(name = "category")
     private String category;
 
+    @Column(name = "delete", insertable = false)
+    private Boolean isDelete;
+
 }
 
 

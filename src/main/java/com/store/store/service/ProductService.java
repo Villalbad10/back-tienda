@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class ProductService {
 
@@ -19,5 +21,11 @@ public class ProductService {
 
     public Page<Product> list(String name, Pageable pageable){
         return productRepository.findByNameContainingIgnoreCase(name, pageable);
+    }
+
+    public Product inactive(Long id){
+        Product product = productRepository.findById(id).get();
+        product.setIsDelete(true);
+        return productRepository.save(product);
     }
 }

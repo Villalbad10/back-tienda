@@ -25,5 +25,10 @@ public class ProductController {
         Pageable pageable = PageRequest.of(page, size);
         return productService.list(name, pageable);
     }
+
+    @PostMapping("/state")
+    public Product inactive(@RequestParam Long id){
+        return productService.inactive(id);
+    }
 }
 
