@@ -3,12 +3,13 @@ package com.store.store.entitie;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "Product")
 @AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 
     @Id
@@ -38,3 +39,10 @@ public class Product {
     private String category;
 
 }
+
+
+
+
+
+
+
